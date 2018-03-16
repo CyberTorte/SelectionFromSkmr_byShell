@@ -138,4 +138,26 @@ PS C:\Users\[ユーザ名]> findSongID [曲名]
 <br>
 アルファベットのみ大文字小文字区別しません
 
+### showSongList(登録済みの曲を取得)
 
+PowerShellを立ち上げ
+
+``` PowerShell:WindowsPowerShell
+PS C:\Users\[ユーザ名]> showSongSkmr [属性名] [解放曲のみ]
+```
+
+と入力します。
+
+属性名は上記同様指定してください。
+<br>
+省くと全てを取得します
+
+解放曲のみというパラメータは
+<br>
+とりあえず何か入力したら
+<br>
+今日解放されている曲を表示します。
+
+この関数ではIDも表示します。
+
+Copyright ©　2018 Ryunosuke Kubo
