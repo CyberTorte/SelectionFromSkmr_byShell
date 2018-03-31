@@ -22,56 +22,64 @@ function global:selectSkmr($type = "none") {
 
             if ( $limited -eq $song.limited -or $song.limited -eq "all" ) {
                 [void]$list.add($song)
-            } elseif ( $limited -eq "none" ) {
-                [void]$list.add($song)
             } else {
                 try {
-                    if ( $(New-TimeSpan $song.limited $(Get-Date)).Minutes -lt 0 ) {
+                    if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
                         [void]$list.add($song)
                     }
-                } catch {}
+                } catch {
+                    if ($limited -eq "none") {
+                        [void]$list.add($song)
+                    }
+                }
             }
 
         } elseif ( ($type -eq "cool") -and ($song.type -eq 2) ) {
             
             if ( $limited -eq $song.limited -or $song.limited -eq "all" ) {
                 [void]$list.add($song)
-            } elseif ( $limited -eq "none" ) {
-                [void]$list.add($song)
             } else {
                 try {
-                    if ( $(New-TimeSpan $song.limited $(Get-Date)).Minutes -lt 0 ) {
+                    if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
                         [void]$list.add($song)
                     }
-                } catch {}
+                } catch {
+                    if ($limited -eq "none") {
+                        [void]$list.add($song)
+                    }
+                }
             }
 
         } elseif ( ($type -eq "active") -and ($song.type -eq 3) ) {
             
             if ( $limited -eq $song.limited -or $song.limited -eq "all" ) {
                 [void]$list.add($song)
-            } elseif ( $limited -eq "none" ) {
-                [void]$list.add($song)
             } else {
                 try {
-                    if ( $(New-TimeSpan $song.limited $(Get-Date)).Minutes -lt 0 ) {
+                    if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
                         [void]$list.add($song)
                     }
-                } catch {}
+                } catch {
+                    if ($limited -eq "none") {
+                        [void]$list.add($song)
+                    }
+                }
             }
             
         } elseif ( $type -eq "none" ) {
             
             if ( $limited -eq $song.limited -or $song.limited -eq "all" ) {
                 [void]$list.add($song)
-            } elseif ( $limited -eq "none" ) {
-                [void]$list.add($song)
             } else {
                 try {
-                    if ( $(New-TimeSpan $song.limited $(Get-Date)).Minutes -lt 0 ) {
+                    if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
                         [void]$list.add($song)
                     }
-                } catch {}
+                } catch {
+                    if ($limited -eq "none") {
+                        [void]$list.add($song)
+                    }
+                }
             }
             
         }

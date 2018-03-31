@@ -26,10 +26,6 @@ function global:showSongSkmr($type = "none", $today) {
                     $song.id = $line.id
                     $song.title = $line.title
                     [void]$list.add($song)
-                } elseif ( $limited -eq "none" ) {
-                    $song.id = $line.id
-                    $song.title = $line.title
-                    [void]$list.add($song)
                 } else {
                     try {
                         if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
@@ -37,7 +33,13 @@ function global:showSongSkmr($type = "none", $today) {
                             $song.title = $line.title
                             [void]$list.add($song)
                         }
-                    } catch {}
+                    } catch {
+                        if ($limited -eq "none") {
+                            $song.id = $line.id
+                             $song.title = $line.title
+                            [void]$list.add($song)
+                        }
+                    }
                 }
 
             } elseif ( ($type -eq "cool") -and ($line.type -eq 2) ) {
@@ -46,10 +48,6 @@ function global:showSongSkmr($type = "none", $today) {
                     $song.id = $line.id
                     $song.title = $line.title
                     [void]$list.add($song)
-                } elseif ( $limited -eq "none" ) {
-                    $song.id = $line.id
-                    $song.title = $line.title
-                    [void]$list.add($song)
                 } else {
                     try {
                         if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
@@ -57,7 +55,13 @@ function global:showSongSkmr($type = "none", $today) {
                             $song.title = $line.title
                             [void]$list.add($song)
                         }
-                    } catch {}
+                    } catch {
+                        if ($limited -eq "none") {
+                            $song.id = $line.id
+                             $song.title = $line.title
+                            [void]$list.add($song)
+                        }
+                    }
                 }
 
             } elseif ( ($type -eq "active") -and ($line.type -eq 3) ) {
@@ -66,10 +70,6 @@ function global:showSongSkmr($type = "none", $today) {
                     $song.id = $line.id
                     $song.title = $line.title
                     [void]$list.add($song)
-                } elseif ( $limited -eq "none" ) {
-                    $song.id = $line.id
-                    $song.title = $line.title
-                    [void]$list.add($song)
                 } else {
                     try {
                         if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
@@ -77,7 +77,13 @@ function global:showSongSkmr($type = "none", $today) {
                             $song.title = $line.title
                             [void]$list.add($song)
                         }
-                    } catch {}
+                    } catch {
+                        if ($limited -eq "none") {
+                            $song.id = $line.id
+                             $song.title = $line.title
+                            [void]$list.add($song)
+                        }
+                    }
                 }
                 
             } elseif ( $type -eq "none" ) {
@@ -86,10 +92,6 @@ function global:showSongSkmr($type = "none", $today) {
                     $song.id = $line.id
                     $song.title = $line.title
                     [void]$list.add($song)
-                } elseif ( $limited -eq "none" ) {
-                    $song.id = $line.id
-                    $song.title = $line.title
-                    [void]$list.add($song)
                 } else {
                     try {
                         if ( $(New-TimeSpan $line.limited $(Get-Date)).Minutes -lt 0 ) {
@@ -97,7 +99,13 @@ function global:showSongSkmr($type = "none", $today) {
                             $song.title = $line.title
                             [void]$list.add($song)
                         }
-                    } catch {}
+                    } catch {
+                        if ($limited -eq "none") {
+                            $song.id = $line.id
+                             $song.title = $line.title
+                            [void]$list.add($song)
+                        }
+                    }
                 }
                 
             }
