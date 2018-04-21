@@ -1,6 +1,6 @@
 function global:selectSkmr($type = "none") {
 
-    $filePath = "C:\Users\endle\myWorkspace\SelectionFromSkmr_byShell\songList.csv"
+    $filePath = "C:\Users\kbc16\workspace\private\SelectionFromSkmr_byShell\songList.csv"
     $limited = ""
     $csv = $(Import-Csv -Path $filePath -Encoding UTF8)
     $list = New-Object System.Collections.ArrayList

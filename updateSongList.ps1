@@ -1,5 +1,5 @@
 function global:updateSkmr([String]$id, [String]$target, [String]$value) {
-    $filePath = "C:\Users\endle\myWorkspace\SelectionFromSkmr_byShell\songList.csv"
+    $filePath = "C:\Users\kbc16\workspace\private\SelectionFromSkmr_byShell\songList.csv"
     $csv = $(Import-Csv -Path $filePath -Encoding UTF8)
 
     if ($target -eq "title") {
